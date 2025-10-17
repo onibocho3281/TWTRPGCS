@@ -37,7 +37,7 @@ function App() {
   const handleNewCharacter = async () => {
     try {
       setStatus("Creating new character...");
-      const templateId = "YOUR_TEMPLATE_SHEET_ID"; // <-- Replace with your Google Sheet template ID
+      const templateId = "1mUHQy9NsT1FFWfer78xGyPePQI21gAgXqos_fjAQTAQ"; // <-- Replace with your Google Sheet template ID
       const newSheet = await copyCharacterSheet(templateId);
       console.log("New sheet created:", newSheet);
       setStatus(`New character sheet created: ${newSheet.name}`);

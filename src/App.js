@@ -1,3 +1,4 @@
+// App.js
 import React, { useState } from "react";
 import { auth, provider } from "./firebase";
 import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
@@ -33,7 +34,9 @@ function App() {
       setStatus("Creating new character...");
       const data = await createCharacterSheet(user.email);
       console.log("New sheet created:", data);
-      setStatus(`New sheet created: ${data.name} → ${data.url}`);
+      setStatus(`New sheet created: ${data.name}`);
+      // Optional: automatically open the sheet in a new tab
+      window.open(data.url, "_blank");
     } catch (err) {
       console.error(err);
       setStatus("Error creating sheet: " + err.message);
